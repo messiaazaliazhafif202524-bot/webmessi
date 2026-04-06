@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMA Negeri 1 Sleman</title>
+    <!-- Menggunakan font modern dari Google Fonts untuk tabel -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* =========================================
+           CSS DARI TEMPLATE ANDA (Base Layout)
+           ========================================= */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header img {
+            width: 100%;
+            display: flex;          
+        }
+
+        /* Navigasi */
+        nav {
+            width: 100%;
+            margin-top: 0px;
+            background-color: grey;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap; /* Agar rapi di HP */
+        }
+
+        nav ul li {
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Konten */
+        main {
+            padding: 0px;
+            margin-top: 20px; /* Jarak antara nav dan main content */
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: orange;
+        }
+
+        .motto {
+            background-color: #4682B4;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 0px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           CSS KHUSUS DATA MURID (Glassmorphism)
+           ========================================= */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --bg-gradient-1: #e0c3fc;
+            --bg-gradient-2: #8ec5fc;
+        }
+
+        /* Wrapper khusus untuk area tabel agar tidak mengganggu layout utama */
+        .data-murid-wrapper {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+            padding: 40px 20px;
+            border-radius: 10px; /* Menyesuaikan agar sudutnya halus */
+            overflow: hidden;
+        }
+
+        .data-murid-wrapper * {
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Elemen dekoratif latar belakang */
+        .blob-1, .blob-2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 154, 158, 0.4);
+            top: -100px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: rgba(161, 196, 253, 0.4);
+            bottom: -150px;
+            right: -100px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Card Container dengan efek Glassmorphism */
+        .card-container {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styling di dalam card */
+        .header-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header-section h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .header-section h2 {
+            color: var(--text-dark); /* Override h2 template orange */
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header-section p {
+            color: var(--text-light);
+            font-size: 15px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.6);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin: 0;
+        }
+
+        /* Table Styling */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            text-align: center;
+        }
+
+        thead {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+
+        th {
+            padding: 18px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        th:first-child {
+            text-align: left;
+        }
+
+        td {
+            padding: 16px 20px;
+            color: var(--text-dark);
+            font-size: 15px;
+            border-bottom: 1px solid #f1f2f6;
+            transition: all 0.3s ease;
+        }
+
+        td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        /* Efek Hover pada baris */
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f8f9fc;
+            transform: scale(1.005);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        tbody tr:hover td {
+            color: var(--primary-color);
+        }
+
+        /* Footer Tabel (Baris Total) */
+        tfoot tr {
+            background-color: #f1f3f8;
+            font-weight: 700;
+        }
+
+        tfoot td {
+            border-bottom: none;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        tfoot td:first-child {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsif untuk layar HP */
+        @media (max-width: 600px) {
+            .card-container {
+                padding: 25px 15px;
+            }
+            .header-section h1 { font-size: 24px; }
+            .header-section h2 { font-size: 18px; }
+            th, td { padding: 12px 10px; font-size: 13px; }
+            nav ul { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header + Logo -->
+    <header>
+        <!-- Pastikan file sleman5.png ada di folder yang sama -->
+        <img src="sleman5.png" alt="Logo SMA Negeri 1 Sleman">
+        
+        <!-- Navigasi -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="berita.html">Berita</a></li>
+                <li><a href="sejarah.html">Sejarah Sekolah</a></li>
+                <li><a href="sarpras.html">Sarana & Prasarana</a></li>
+                <li><a href="datamurid.html">Data Murid</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main>
+        <!-- Area khusus Data Murid dengan animasi & background gradien -->
+        <section class="data-murid-wrapper">
+            <!-- Animasi Background Abstrak -->
+            <div class="blob-1"></div>
+            <div class="blob-2"></div>
+
+            <!-- Kontainer Kaca (Glassmorphism) -->
+            <div class="card-container">
+                <div class="header-section">
+                    <h1>Data Murid</h1>
+                    <h2>SMAN 1 Sleman</h2>
+                    <p>Tahun Pelajaran 2025/2026</p>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tingkat Pendidikan</th>
+                                <th>Laki-laki (L)</th>
+                                <th>Perempuan (P)</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tingkat 10</td>
+                                <td>71</td>
+                                <td>181</td>
+                                <td>252</td>
+                            </tr>
+                            <tr>
+                                <td>Tingkat 11</td>
+                                <td>85</td>
+                                <td>167</td>
+                                <td>252</td>
+                            </tr>
+                            <tr>
+                                <td>Tingkat 12</td>
+                                <td>76</td>
+                                <td>176</td>
+                                <td>252</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total</td>
+                                <td>261</td>
+                                <td>495</td>
+                                <td>756</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 SMA Negeri 1 Sleman. All rights reserved.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SMA Negeri 1 Sleman</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        
+        header img {
+           width: 100%;
+            display: flex;            
+        }
+
+        /* Navigasi */
+        nav {
+            width: 100%;
+            margin-top: 0px;
+            background-color: grey;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Konten */
+        main {
+            padding: 0px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: orange;
+        }
+
+        .motto {
+            background-color: #4682B4;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 0px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header + Logo -->
+    <header>
+        <img src="sleman5.png">
+    <! -- Navigasi -->
+        <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="sejarah.html">Sejarah Sekolah</a></li>
+            <li><a href="sarpras.html">Sarana & Prasarana</a></li>
+            <li><a href="datamurid.html">Data Murid</a></li>
+        </ul>
+    </nav>
+    </header>
+        
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sarana dan Prasarana</title>
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6; /* Latar belakang abu-abu terang modern */
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        /* Bagian Header */
+        .header-container {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-container p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        /* Tata Letak Grid untuk Card */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Desain Card Kekinian */
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #3b82f6; /* Aksen garis biru di atas */
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            background-color: #eff6ff;
+            padding: 0.8rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content p {
+            font-size: 1.05rem;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .citation {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 0.3rem;
+        }
+
+        /* Responsivitas untuk Layar Kecil */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            .header-container h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Sarana dan Prasarana</h1>
+        <p>Sistem Informasi Fasilitas Sekolah</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-icon">🏫</div>
+            <div class="card-content">
+                <p>Ruang Kelas: X, XI, dan XII MIPA & IPS</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">👨‍🏫</div>
+            <div class="card-content">
+                <p>Ruang Guru & Kepala Sekolah</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔬</div>
+            <div class="card-content">
+                <p>Laboratorium: Bahasa, Fisika, Kimia, Biologi, dan Komputer</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🕌</div>
+            <div class="card-content">
+                <p>Ruang Ibadah: Masjid, ruang agama Katolik dan Kristen</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎨</div>
+            <div class="card-content">
+                <p>Ruang Kesenian dan Musik</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🚻</div>
+            <div class="card-content">
+                <p>Toilet/WC: Terpisah untuk guru, siswa laki-laki, siswa perempuan, dan tamu </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📚</div>
+            <div class="card-content">
+                <p>Ruang UKS, Perpustakaan, Bimbingan Konseling</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌳</div>
+            <div class="card-content">
+                <p>Kamar mandi, gudang, koperasi, tempat parkir, dan taman</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚽</div>
+            <div class="card-content">
+                <p>Aula, lapangan, dan fasilitas olahraga</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SMA Negeri 1 Sleman. All Rights Reserved.</p>
+        <p>Jl. Pendidikan No. 1, Sleman, D.I. Yogyakarta</p>
+    </footer>
+
+</body>
+</html>
